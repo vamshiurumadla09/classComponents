@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <style>
+        #counter {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <div id="counterTitle"></div>
+    <div id="counter"></div>
+
+    <script type="text/babel">
+        var x = <h1>wel-come to class components</h1>;
+        ReactDOM.render(x, document.getElementById("d1"));
+
+        var y = <h2>counter</h2>
+        ReactDOM.render(y, document.getElementById('counterTitle'));
+
+        //basic structure of class component
+        class CounterComponent extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    count:0
+                }
+            }
+            render(){
+                return (
+                    <div>
+                        <h3 id="chnageText">sample counter</h3>
+                        <span>{this.state.count}</span>
+                    </div>
+                )
+            }
+        };
+        ReactDOM.render(<CounterComponent/>, document.getElementById('counter'));
+
+
+
+    </script>
+</body>
+
+</html>
